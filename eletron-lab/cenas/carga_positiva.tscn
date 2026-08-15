@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cjrnnqtnwes27"]
+
+[ext_resource type="Script" uid="uid://dy32iodfng2hs" path="res://scrpts/carga_positiva.gd" id="1_d168x"]
+[ext_resource type="Script" uid="uid://boesuh24a6q5y" path="res://scrpts/corpo.gd" id="3_tc06b"]
+
+[node name="CargaPositiva" type="Control" unique_id=1599844872]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 300.0
+offset_top = 300.0
+offset_right = -840.0
+offset_bottom = -280.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d168x")
+
+[node name="Corpo" type="Polygon2D" parent="." unique_id=338918733]
+position = Vector2(300, 300)
+script = ExtResource("3_tc06b")
