@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://maf0jrfh1bpl"]
+
+[ext_resource type="Texture2D" uid="uid://cyfbmtu65iaix" path="res://imagens/ChatGPT Image 19 de ago. de 2026, 11_33_32.png" id="1_th4af"]
+[ext_resource type="PackedScene" uid="uid://cjrnnqtnwes27" path="res://cenas/carga_positiva.tscn" id="2_5dc6k"]
+
+[node name="Campo eletrico lab" type="Control" unique_id=1480778550]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fundolaboratorio" type="TextureRect" parent="." unique_id=1274426503]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_th4af")
+
+[node name="Areaexperimento" type="Panel" parent="." unique_id=2051593620]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Cargapositivacentral" parent="Areaexperimento" unique_id=1599844872 instance=ExtResource("2_5dc6k")]
+layout_mode = 1
+offset_left = 600.0
+offset_right = 560.0
+offset_bottom = 260.0
+
+[node name="Sonda" type="Control" parent="Areaexperimento" unique_id=1819860616]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Campo" type="Node2D" parent="Areaexperimento" unique_id=1902557340]
+
+[node name="Painelcampo" type="Panel" parent="Areaexperimento" unique_id=726866948]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CampoLabel" type="Label" parent="Areaexperimento/Painelcampo" unique_id=1961985449]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="DistanciaLabel" type="Label" parent="Areaexperimento/Painelcampo" unique_id=1513973044]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

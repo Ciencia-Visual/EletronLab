@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://lv0xjo5mekgv"]
+
+[ext_resource type="Texture2D" uid="uid://da6yskcbf6r6m" path="res://imagens/fundoo lab.jpeg" id="1_l4tio"]
+[ext_resource type="PackedScene" uid="uid://c4gbroqymv6te" path="res://cenas/carga_negativa.tscn" id="2_lt33j"]
+[ext_resource type="PackedScene" uid="uid://cjrnnqtnwes27" path="res://cenas/carga_positiva.tscn" id="3_rwnmd"]
+[ext_resource type="Script" uid="uid://b20wxin745hcu" path="res://scrpts/forcas.gd" id="4_rwnmd"]
+
+[node name="Laboratorio" type="Control" unique_id=683803905]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fundolaboratorio" type="TextureRect" parent="." unique_id=846613903]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -215.0
+offset_top = -393.0
+offset_right = 205.0
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_l4tio")
+
+[node name="AreaExperimento" type="Control" parent="." unique_id=840707006]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CargaNegativa" parent="AreaExperimento" unique_id=1599844872 instance=ExtResource("2_lt33j")]
+layout_mode = 1
+
+[node name="CargaPositiva" parent="AreaExperimento" unique_id=1585037657 instance=ExtResource("3_rwnmd")]
+layout_mode = 1
+offset_left = 4.0
+offset_top = 15.0
+offset_right = 4.0
+offset_bottom = 15.0
+
+[node name="Forcas" type="Node2D" parent="AreaExperimento" unique_id=617443700]
+script = ExtResource("4_rwnmd")

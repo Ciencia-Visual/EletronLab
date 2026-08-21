@@ -1,0 +1,489 @@
+[gd_scene format=3 uid="uid://lv0xjo5mekgv"]
+
+[ext_resource type="Texture2D" uid="uid://cyfbmtu65iaix" path="res://imagens/ChatGPT Image 19 de ago. de 2026, 11_33_32.png" id="1_o8y84"]
+[ext_resource type="PackedScene" uid="uid://c4gbroqymv6te" path="res://cenas/carga_negativa.tscn" id="2_lt33j"]
+[ext_resource type="AudioStream" uid="uid://51eyimiefj81" path="res://sons/One_More_Credit.mp3" id="2_o8y84"]
+[ext_resource type="PackedScene" uid="uid://cjrnnqtnwes27" path="res://cenas/carga_positiva.tscn" id="3_rwnmd"]
+[ext_resource type="Script" uid="uid://b20wxin745hcu" path="res://scrpts/forcas.gd" id="4_rwnmd"]
+[ext_resource type="Script" uid="uid://bfga363c11hdn" path="res://scrpts/controle_carga_negativa.gd" id="5_scawn"]
+[ext_resource type="Script" uid="uid://chr7l72h23fuo" path="res://scrpts/controle_carga_positiva.gd" id="5_ykftd"]
+[ext_resource type="Script" uid="uid://bgx02i3btfsss" path="res://scrpts/painel_forca_eletrica.gd" id="6_yae5u"]
+[ext_resource type="Script" uid="uid://bmgnwc4i32qc6" path="res://scrpts/desafio_1.gd" id="8_4dhr1"]
+[ext_resource type="Script" uid="uid://ohve7bhlo5xc" path="res://scrpts/desafio_2.gd" id="10_mkjb6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jyvnd"]
+bg_color = Color(0.8399991, 0.23662406, 0.29659134, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyda"]
+bg_color = Color(1, 0.54901963, 0.007843138, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rwnmd"]
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_01y1c"]
+bg_color = Color(1, 0.54901963, 0.007843138, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_scawn"]
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ykftd"]
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yae5u"]
+bg_color = Color(0.972549, 1, 0.56078434, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.49747366, 0.49747372, 0.49747342, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_abjja"]
+bg_color = Color(0.37516546, 0.40872642, 0.92020375, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2mr5"]
+bg_color = Color(0.9647059, 0.8, 0.5254902, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rkk07"]
+bg_color = Color(0.95686275, 0.7882353, 0.5176471, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_omq3p"]
+bg_color = Color(0.8156863, 0.53333336, 0.3882353, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.73333335, 0.20392157, 0.019607844, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jv8vb"]
+bg_color = Color(1, 0.42745098, 0.15686275, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hyodh"]
+bg_color = Color(0.13725491, 0.6, 0.6, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rdpry"]
+bg_color = Color(0.5201724, 0.6873375, 0.9582817, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.48994368, 0.45892644, 0.8339757, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[node name="Laboratorio" type="Control" unique_id=683803905]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fundolaboratorio" type="TextureRect" parent="." unique_id=846613903]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -579.0
+offset_top = -639.0
+offset_right = 333.0
+offset_bottom = 249.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_o8y84")
+
+[node name="Fundosonoro" type="AudioStreamPlayer" parent="." unique_id=1128010120]
+stream = ExtResource("2_o8y84")
+volume_db = 5.0
+autoplay = true
+parameters/looping = true
+
+[node name="AreaExperimento" type="Control" parent="." unique_id=840707006]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CargaNegativa" parent="AreaExperimento" unique_id=1599844872 instance=ExtResource("2_lt33j")]
+layout_mode = 1
+
+[node name="CargaPositiva" parent="AreaExperimento" unique_id=1585037657 node_paths=PackedStringArray("valor_carga_label") instance=ExtResource("3_rwnmd")]
+layout_mode = 1
+offset_left = 707.0
+offset_top = 309.0
+offset_right = -316.0
+offset_bottom = -212.0
+valor_carga_label = NodePath("../ControleCargaPositiva/ValorCarga")
+
+[node name="Forcas" type="Node2D" parent="AreaExperimento" unique_id=617443700 node_paths=PackedStringArray("carga_positiva", "carga_negativa")]
+script = ExtResource("4_rwnmd")
+carga_positiva = NodePath("../CargaPositiva")
+carga_negativa = NodePath("../CargaNegativa")
+
+[node name="ControleCargaPositiva" type="Panel" parent="AreaExperimento" unique_id=376153893 node_paths=PackedStringArray("carga_positiva", "valor_label")]
+layout_mode = 0
+offset_left = 1038.0
+offset_top = 5.0
+offset_right = 1242.0
+offset_bottom = 128.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jyvnd")
+script = ExtResource("5_ykftd")
+carga_positiva = NodePath("../CargaPositiva")
+valor_label = NodePath("ValorCarga")
+
+[node name="ValorCarga" type="Label" parent="AreaExperimento/ControleCargaPositiva" unique_id=1177248515]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -47.0
+offset_top = -8.0
+offset_right = 37.0
+offset_bottom = 47.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "5 μC"
+
+[node name="BotaoMenos" type="Button" parent="AreaExperimento/ControleCargaPositiva" unique_id=983726847]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 42.0
+offset_right = 102.0
+offset_bottom = 119.0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_spyda")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_rwnmd")
+text = "-"
+
+[node name="BotaoMais" type="Button" parent="AreaExperimento/ControleCargaPositiva" unique_id=111473425]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 45.0
+offset_right = 199.0
+offset_bottom = 120.0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_01y1c")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_scawn")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_ykftd")
+text = "+"
+
+[node name="PainelForcaEletrica" type="Panel" parent="AreaExperimento" unique_id=1814349616 node_paths=PackedStringArray("carga_positiva", "carga_negativa", "label_forca")]
+layout_mode = 0
+offset_left = 393.0
+offset_top = 11.0
+offset_right = 886.0
+offset_bottom = 72.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yae5u")
+script = ExtResource("6_yae5u")
+carga_positiva = NodePath("../CargaPositiva")
+carga_negativa = NodePath("../CargaNegativa")
+label_forca = NodePath("Forca")
+
+[node name="Titulo" type="Label" parent="AreaExperimento/PainelForcaEletrica" unique_id=1235223720]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 12.0
+offset_top = 4.0
+offset_right = -287.0
+offset_bottom = 32.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(2.887845e-06, 0, 0.7245649, 1)
+theme_override_font_sizes/font_size = 20
+text = "FORÇA ELÉTRICA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Forca" type="Label" parent="AreaExperimento/PainelForcaEletrica" unique_id=932563255]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -35.0
+offset_right = 213.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.029506557, 0.029506557, 0.029506557, 1)
+theme_override_font_sizes/font_size = 25
+text = "F = 0,00 N"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ControleCargaNegativa" type="Panel" parent="AreaExperimento" unique_id=556294610 node_paths=PackedStringArray("carga_negativa", "valor_label")]
+custom_minimum_size = Vector2(204, 123)
+layout_mode = 0
+offset_left = 5.0
+offset_top = 4.0
+offset_right = 232.0
+offset_bottom = 139.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_abjja")
+script = ExtResource("5_scawn")
+carga_negativa = NodePath("../CargaNegativa")
+valor_label = NodePath("ValorCarganegativa")
+
+[node name="ValorCarganegativa" type="Label" parent="AreaExperimento/ControleCargaNegativa" unique_id=431027875]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -3.0
+offset_top = 2.0
+offset_right = -3.0
+offset_bottom = 65.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 45
+text = "-5 μC"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BotaoMenos" type="Button" parent="AreaExperimento/ControleCargaNegativa" unique_id=225670097]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -69.0
+offset_right = 104.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_h2mr5")
+text = "-"
+
+[node name="BotaoMais" type="Button" parent="AreaExperimento/ControleCargaNegativa" unique_id=1272655312]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -101.0
+offset_top = -70.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_rkk07")
+text = "+"
+
+[node name="Desafio1" type="Panel" parent="AreaExperimento" unique_id=213364698 node_paths=PackedStringArray("carga_positiva", "carga_negativa", "resultado", "botao_atracao", "botao_repulsao", "label_pontuacao", "desafio2")]
+layout_mode = 0
+offset_left = 982.0
+offset_top = 179.0
+offset_right = 1259.0
+offset_bottom = 506.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_omq3p")
+script = ExtResource("8_4dhr1")
+carga_positiva = NodePath("../CargaPositiva")
+carga_negativa = NodePath("../CargaNegativa")
+resultado = NodePath("Resultado")
+botao_atracao = NodePath("Botaoatracao")
+botao_repulsao = NodePath("Botaorepulsao")
+label_pontuacao = NodePath("../Pontuacao")
+desafio2 = NodePath("../../Desafio2")
+
+[node name="Titulo" type="Label" parent="AreaExperimento/Desafio1" unique_id=6368238]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 9.0
+offset_right = 279.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.84263474, 3.5616756e-06, 4.813075e-07, 1)
+text = "DESAFIO DA ATRAÇÃO E REPULSÃO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Descricao" type="Label" parent="AreaExperimento/Desafio1" unique_id=868896327]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 30.0
+offset_right = 265.0
+offset_bottom = 157.0
+text = "Escolha um valor para cada
+carga disponível na bancada.
+Depois selecione qual o fenômeno que foi
+observado."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Botaoatracao" type="Button" parent="AreaExperimento/Desafio1" unique_id=345733481]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 159.0
+offset_right = 243.0
+offset_bottom = 197.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_jv8vb")
+text = "ATRAÇÃO"
+
+[node name="Botaorepulsao" type="Button" parent="AreaExperimento/Desafio1" unique_id=1720845963]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 199.0
+offset_right = 243.0
+offset_bottom = 240.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_hyodh")
+text = "REPULSÃO"
+
+[node name="Resultado" type="Label" parent="AreaExperimento/Desafio1" unique_id=760598664]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 270.0
+offset_right = 209.0
+offset_bottom = 293.0
+
+[node name="Botaoreiniciar" type="Button" parent="AreaExperimento/Desafio1" unique_id=1370773134]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 270.0
+offset_right = 219.0
+offset_bottom = 301.0
+text = "REINICIAR DESAFIO"
+
+[node name="Progresso" type="Label" parent="AreaExperimento/Desafio1" unique_id=1624512086]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 299.0
+offset_right = 213.0
+offset_bottom = 322.0
+text = "Acertos 0/3"
+
+[node name="Pontuacao" type="Label" parent="AreaExperimento" unique_id=370364339]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.086
+offset_left = 701.0
+offset_top = 20.0
+offset_right = 765.92
+offset_bottom = 66.0
+theme_override_colors/font_color = Color(0.9815834, 0.21133193, 1.92523e-07, 1)
+theme_override_font_sizes/font_size = 20
+text = "PONTOS:"
+
+[node name="Desafio2" type="Panel" parent="." unique_id=1534608562 node_paths=PackedStringArray("forcas", "resultado", "label_pontuacao")]
+visible = false
+layout_mode = 0
+offset_left = 6.0
+offset_top = 210.0
+offset_right = 269.0
+offset_bottom = 473.0
+script = ExtResource("10_mkjb6")
+forcas = NodePath("../AreaExperimento/Forcas")
+resultado = NodePath("Resultado")
+label_pontuacao = NodePath("../AreaExperimento/Pontuacao")
+
+[node name="Titulo" type="Label" parent="Desafio2" unique_id=1268106896]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 0.374
+offset_right = 131.5
+offset_bottom = -134.08
+theme_override_colors/font_color = Color(0.8980392, 1, 0.11372549, 1)
+text = "DESAFIO DA FORÇA ELÉTRICA"
+horizontal_alignment = 1
+
+[node name="Descricao" type="Label" parent="Desafio2" unique_id=1978021202]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 34.0
+offset_right = 265.0
+offset_bottom = 151.0
+text = "Mantendo os valores das cargas
+ sem alteração, ajuste a 
+distância das cargas
+ até chegar em F= 2.5N"
+
+[node name="Button" type="Button" parent="Desafio2" unique_id=1231141978]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 158.0
+offset_right = 171.0
+offset_bottom = 189.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_rdpry")
+text = "FEITO!"
+
+[node name="Resultado" type="Label" parent="Desafio2" unique_id=1485436094]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 195.0
+offset_right = 155.0
+offset_bottom = 218.0
+text = "Parabéns!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="AreaExperimento/ControleCargaPositiva/BotaoMenos" to="AreaExperimento/ControleCargaPositiva" method="_on_botao_menos_pressed"]
+[connection signal="pressed" from="AreaExperimento/ControleCargaPositiva/BotaoMais" to="AreaExperimento/CargaPositiva" method="_on_botao_mais_pressed"]
+[connection signal="pressed" from="AreaExperimento/ControleCargaNegativa/BotaoMenos" to="AreaExperimento/ControleCargaNegativa" method="_on_botao_menos_pressed"]
+[connection signal="pressed" from="AreaExperimento/ControleCargaNegativa/BotaoMais" to="AreaExperimento/ControleCargaNegativa" method="_on_botao_mais_pressed"]
+[connection signal="pressed" from="AreaExperimento/Desafio1/Botaoatracao" to="AreaExperimento/Desafio1" method="_on_botaoatracao_pressed"]
+[connection signal="pressed" from="AreaExperimento/Desafio1/Botaorepulsao" to="AreaExperimento/Desafio1" method="_on_botaorepulsao_pressed"]
+[connection signal="pressed" from="AreaExperimento/Desafio1/Botaoreiniciar" to="AreaExperimento/Desafio1" method="_on_botaoreiniciar_pressed"]
+[connection signal="pressed" from="Desafio2/Button" to="Desafio2" method="_on_button_pressed"]
