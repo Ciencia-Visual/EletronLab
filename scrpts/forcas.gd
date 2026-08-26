@@ -17,7 +17,7 @@ func _draw():
 	if carga_positiva == null or carga_negativa == null:
 		return
 
-	# Posição do centro das cargas
+	
 	var pos1 = to_local(
 		carga_positiva.global_position + Vector2(70, 70)
 	)
@@ -26,19 +26,16 @@ func _draw():
 		carga_negativa.global_position + Vector2(70, 70)
 	)
 
-	# Vetor entre as cargas
+	
 	var direcao = pos2 - pos1
 
-	# Distância entre as cargas
+	
 	var distancia = direcao.length()
 
 	if distancia < 1:
 		return
 		
 	
-	# ==========================================
-	# FORÇA ELÉTRICA REAL
-	# ==========================================
 
 	var distancia_metros = distancia / 1000.0
 
@@ -47,35 +44,24 @@ func _draw():
 	) * (
 		abs(carga_negativa.valor_carga) * 1e-6
 	) / pow(distancia_metros, 2)
-	# Direção normalizada
+	
 	var unitario = direcao.normalized()
 
-	# ==========================================
-	# INTENSIDADE DAS CARGAS
-	# ==========================================
+
 
 	var intensidade_1 = abs(carga_positiva.valor_carga)
 	var intensidade_2 = abs(carga_negativa.valor_carga)
 
-	# Produto dos módulos das cargas
 	var produto_cargas = intensidade_1 * intensidade_2
 
-	# ==========================================
-	# TAMANHO VISUAL DA SETA
-	# ==========================================
 
 	var distancia_referencia := 400.0
 	var tamanho_base := 40.0
-
-	# Relação proporcional à Lei de Coulomb:
-	# F proporcional a |q1 * q2| / r²
-
 	var intensidade_forca = produto_cargas * pow(
 		distancia_referencia / distancia,
 		2
 	)
 
-	# Escala visual
 	var tamanho_seta = tamanho_base * intensidade_forca / 25.0
 
 	# Limites visuais da seta
@@ -84,11 +70,6 @@ func _draw():
 		10.0,
 		220.0
 	)
-
-	# ==========================================
-	# DIREÇÃO DA FORÇA
-	# ==========================================
-
 	var produto_sinais = (
 		carga_positiva.valor_carga
 		* carga_negativa.valor_carga
@@ -98,20 +79,14 @@ func _draw():
 	var direcao_2: Vector2
 
 	if produto_sinais < 0:
-		# Sinais opostos → atração
+
 
 		direcao_1 = unitario
 		direcao_2 = -unitario
 
 	else:
-		# Mesmo sinal → repulsão
-
 		direcao_1 = -unitario
 		direcao_2 = unitario
-
-	# ==========================================
-	# DESENHA AS FORÇAS
-	# ==========================================
 
 	desenhar_seta(
 		pos1,
@@ -134,7 +109,6 @@ func desenhar_seta(
 
 	var ponta = posicao + direcao * tamanho
 
-	# Linha principal
 	draw_line(
 		posicao,
 		ponta,
@@ -142,16 +116,12 @@ func desenhar_seta(
 		6.0
 	)
 
-	# Tamanho da ponta
 	var tamanho_ponta := 18.0
-
-	# Vetor perpendicular
 	var perpendicular = Vector2(
 		-direcao.y,
 		direcao.x
 	)
 
-	# Pontas da seta
 	var ponta1 = (
 		ponta
 		- direcao * tamanho_ponta

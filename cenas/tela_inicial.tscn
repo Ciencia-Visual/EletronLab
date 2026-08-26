@@ -1,8 +1,78 @@
 [gd_scene format=3 uid="uid://dr3t24m70phon"]
 
-[ext_resource type="Texture2D" uid="uid://cmuu72jp1x1ms" path="res://imagens/WhatsApp Image 2026-08-13 at 15.15.51.jpeg" id="1_e7n7l"]
 [ext_resource type="AudioStream" uid="uid://chua38t506khq" path="res://sons/Turbo_Jump.mp3" id="1_ox3ib"]
+[ext_resource type="Texture2D" uid="uid://db87fyq6iq421" path="res://imagens/1.png" id="2_03tng"]
 [ext_resource type="Script" uid="uid://dr1edvesy2f2j" path="res://scrpts/botaocomecar.gd" id="2_24di4"]
+[ext_resource type="Texture2D" uid="uid://bbsedv3vcf7sc" path="res://imagens/3.png" id="3_hckjk"]
+[ext_resource type="Script" uid="uid://cunyogcrpyf4a" path="res://scrpts/botao_labcampo.gd" id="4_b8b2x"]
+[ext_resource type="Texture2D" uid="uid://x4ld6eht6tti" path="res://imagens/5.png" id="4_rbogf"]
+[ext_resource type="Texture2D" uid="uid://cknkok3rly2tf" path="res://imagens/7.png" id="5_6h646"]
+[ext_resource type="Texture2D" uid="uid://b7sj5sqh0i5ue" path="res://imagens/9.png" id="6_kugbo"]
+[ext_resource type="Texture2D" uid="uid://4iurc3ilqwa8" path="res://imagens/8.png" id="7_nm6a0"]
+[ext_resource type="Script" uid="uid://8pocimav2454" path="res://scrpts/botao_labeletrizacao.gd" id="10_03tng"]
+
+[sub_resource type="Animation" id="Animation_rgwdh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect6:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1000, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_03tng"]
+resource_name = "nuvens"
+length = 6.0
+loop_mode = 1
+step = 0.02
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.12, 1.7, 2.22, 2.68, 3.18, 3.66, 4.06, 4.64, 4.86, 5.18, 5.52),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-39, 0), Vector2(-50, 0), Vector2(-70, 0), Vector2(-100, 0), Vector2(-110, 0), Vector2(-130, 0), Vector2(-140, 0), Vector2(-150, 0), Vector2(-200, 0), Vector2(-350, 0), Vector2(-500, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect6:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.94, 2.24, 3.28, 5.24),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1000, 0), Vector2(800, 0), Vector2(700, 0), Vector2(500, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hckjk"]
+_data = {
+&"RESET": SubResource("Animation_rgwdh"),
+&"nuvens": SubResource("Animation_03tng")
+}
 
 [sub_resource type="SystemFont" id="SystemFont_spyda"]
 
@@ -34,7 +104,7 @@ resource_name = "BotaoHover"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Botaocomecar:scale")
+tracks/0/path = NodePath("BotaoLabcarga:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -49,7 +119,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Botaocomecar:scale")
+tracks/0/path = NodePath("BotaoLabcarga:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -109,7 +179,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Botaocomecar:modulate")
+tracks/5/path = NodePath("BotaoLabcarga:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -121,7 +191,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Botaosobre:modulate")
+tracks/6/path = NodePath("BotaoLabcampo:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -133,7 +203,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Botaoconquistas:modulate")
+tracks/7/path = NodePath("BotaoLabeletrizacao:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -173,7 +243,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Botaocomecar:modulate")
+tracks/2/path = NodePath("BotaoLabcarga:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -185,7 +255,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Botaosobre:modulate")
+tracks/3/path = NodePath("BotaoLabcampo:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -197,7 +267,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Botaoconquistas:modulate")
+tracks/4/path = NodePath("BotaoLabeletrizacao:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -276,8 +346,69 @@ offset_right = 3.0
 offset_bottom = 212.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_e7n7l")
+texture = ExtResource("2_03tng")
 stretch_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="FundoLaboratorio" unique_id=241533892]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_hckjk")
+
+[node name="TextureRect6" type="TextureRect" parent="FundoLaboratorio" unique_id=709996457]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1000.0
+offset_right = 1069.0037
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_hckjk")
+
+[node name="TextureRect2" type="TextureRect" parent="FundoLaboratorio" unique_id=1541562316]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_rbogf")
+
+[node name="TextureRect3" type="TextureRect" parent="FundoLaboratorio" unique_id=1626942396]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_6h646")
+
+[node name="TextureRect4" type="TextureRect" parent="FundoLaboratorio" unique_id=7329046]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_kugbo")
+
+[node name="TextureRect5" type="TextureRect" parent="FundoLaboratorio" unique_id=920339784]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_nm6a0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FundoLaboratorio" unique_id=1354604669]
+libraries/ = SubResource("AnimationLibrary_hckjk")
+autoplay = &"nuvens"
 
 [node name="Interface" type="Control" parent="." unique_id=2006867203]
 layout_mode = 1
@@ -321,21 +452,21 @@ de eletrostática"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Botaocomecar" type="Button" parent="Interface" unique_id=1260146673]
+[node name="BotaoLabcarga" type="Button" parent="Interface" unique_id=1260146673]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 430.0
-offset_top = 503.0
-offset_right = 798.0
-offset_bottom = 553.0
+offset_left = 474.0
+offset_top = 500.0
+offset_right = 719.0
+offset_bottom = 550.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_01y1c")
 theme_override_styles/hover = SubResource("StyleBoxFlat_spyda")
-text = "COMEÇAR EXPERIMENTO"
+text = "CARGAS"
 script = ExtResource("2_24di4")
 
-[node name="Botaosobre" type="Button" parent="Interface" unique_id=864411984]
+[node name="BotaoLabcampo" type="Button" parent="Interface" unique_id=864411984]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 500.0
@@ -346,9 +477,10 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_01y1c")
 theme_override_styles/hover = SubResource("StyleBoxFlat_spyda")
-text = "SOBRE"
+text = "CAMPO"
+script = ExtResource("4_b8b2x")
 
-[node name="Botaoconquistas" type="Button" parent="Interface" unique_id=1638571865]
+[node name="BotaoLabeletrizacao" type="Button" parent="Interface" unique_id=1638571865]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 500.0
@@ -359,10 +491,13 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_01y1c")
 theme_override_styles/hover = SubResource("StyleBoxFlat_spyda")
-text = "Conquistas"
+text = "ELETRIZAÇÃO"
+script = ExtResource("10_03tng")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Interface" unique_id=672828310]
 libraries/ = SubResource("AnimationLibrary_yi2fr")
 autoplay = &"abertura"
 
-[connection signal="pressed" from="Interface/Botaocomecar" to="Interface/Botaocomecar" method="_on_pressed"]
+[connection signal="pressed" from="Interface/BotaoLabcarga" to="Interface/BotaoLabcarga" method="_on_pressed"]
+[connection signal="pressed" from="Interface/BotaoLabcampo" to="Interface/BotaoLabcampo" method="_on_pressed"]
+[connection signal="pressed" from="Interface/BotaoLabeletrizacao" to="Interface/BotaoLabeletrizacao" method="_on_pressed"]

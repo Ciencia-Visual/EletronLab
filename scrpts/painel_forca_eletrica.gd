@@ -6,7 +6,7 @@ extends Panel
 @export var label_forca: Label
 
 
-# Constante eletrostática
+
 var k := 8.99e9
 
 
@@ -22,9 +22,6 @@ func calcular_forca():
 	if label_forca == null:
 		return
 
-	# ==========================================
-	# VALORES DAS CARGAS
-	# ==========================================
 
 	var q1_micro = carga_positiva.valor_carga
 	var q2_micro = carga_negativa.valor_carga
@@ -32,11 +29,6 @@ func calcular_forca():
 	# Conversão de μC para C
 	var q1 = q1_micro * 0.000001
 	var q2 = q2_micro * 0.000001
-
-
-	# ==========================================
-	# DISTÂNCIA ENTRE AS CARGAS
-	# ==========================================
 
 	var pos1 = (
 		carga_positiva.global_position
@@ -54,23 +46,10 @@ func calcular_forca():
 		return
 
 
-	# ==========================================
-	# CONVERSÃO DA DISTÂNCIA
-	# ==========================================
-
 	# 400 pixels = 0,40 metros
 	var distancia_metros = distancia_pixels / 1000.0
 
-
-	# ==========================================
-	# LEI DE COULOMB
-	# ==========================================
-
 	var forca = k * abs(q1 * q2) / pow(distancia_metros, 2)
 
-
-	# ==========================================
-	# MOSTRA O RESULTADO
-	# ==========================================
 
 	label_forca.text = "F = %.2f N" % forca

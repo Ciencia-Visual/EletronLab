@@ -2,6 +2,31 @@
 
 [ext_resource type="Texture2D" uid="uid://cyfbmtu65iaix" path="res://imagens/ChatGPT Image 19 de ago. de 2026, 11_33_32.png" id="1_th4af"]
 [ext_resource type="PackedScene" uid="uid://cjrnnqtnwes27" path="res://cenas/carga_positiva.tscn" id="2_5dc6k"]
+[ext_resource type="Script" uid="uid://dkvfb8e5oy5he" path="res://scrpts/campo.gd" id="3_5dc6k"]
+[ext_resource type="Script" uid="uid://0fkqptll0o1m" path="res://scrpts/sonda.gd" id="3_x420o"]
+[ext_resource type="Script" uid="uid://8mxhn3x5s42u" path="res://scrpts/controledacarga.gd" id="5_h1xow"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h1xow"]
+bg_color = Color(0.96670824, 0.44776624, 0.70203376, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8235294, 0, 0.6313726, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g0u45"]
+bg_color = Color(1, 1, 0.5019608, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dts68"]
+bg_color = Color(1, 1, 0.4627451, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
 
 [node name="Campo eletrico lab" type="Control" unique_id=1480778550]
 layout_mode = 3
@@ -22,33 +47,84 @@ texture = ExtResource("1_th4af")
 
 [node name="Areaexperimento" type="Panel" parent="." unique_id=2051593620]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1280.0
+offset_bottom = 707.0
 
-[node name="Cargapositivacentral" parent="Areaexperimento" unique_id=1599844872 instance=ExtResource("2_5dc6k")]
+[node name="Cargapositivacentral" parent="Areaexperimento" unique_id=1599844872 node_paths=PackedStringArray("valor_carga_label") instance=ExtResource("2_5dc6k")]
 layout_mode = 1
 offset_left = 600.0
 offset_right = 560.0
 offset_bottom = 260.0
+valor_carga = -5.0
+valor_carga_label = NodePath("ValorCargaLab")
 
-[node name="Sonda" type="Control" parent="Areaexperimento" unique_id=1819860616]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Campo" type="Node2D" parent="Areaexperimento" unique_id=1902557340]
-
-[node name="Painelcampo" type="Panel" parent="Areaexperimento" unique_id=726866948]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="CampoLabel" type="Label" parent="Areaexperimento/Painelcampo" unique_id=1961985449]
+[node name="ValorCargaLab" type="Label" parent="Areaexperimento/Cargapositivacentral" unique_id=793371946]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="DistanciaLabel" type="Label" parent="Areaexperimento/Painelcampo" unique_id=1513973044]
+[node name="Sonda" type="Control" parent="Areaexperimento" unique_id=1819860616 node_paths=PackedStringArray("carga_geradora", "valor_campo")]
+z_index = 10
+layout_mode = 1
+anchor_left = 2.641
+anchor_top = 2.7240002
+anchor_right = 2.641
+anchor_bottom = 2.7240002
+offset_left = -2530.48
+offset_top = -1625.8682
+offset_right = -2460.48
+offset_bottom = -1555.8682
+script = ExtResource("3_x420o")
+carga_geradora = NodePath("../Cargapositivacentral")
+valor_campo = NodePath("Valorcampo")
+cor_sonda = Color(0.933795, 0.6847898, 0.8002672, 1)
+
+[node name="Valorcampo" type="Label" parent="Areaexperimento/Sonda" unique_id=337544506]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="Campo" type="Node2D" parent="Areaexperimento" unique_id=1902557340 node_paths=PackedStringArray("carga_geradora")]
+script = ExtResource("3_5dc6k")
+carga_geradora = NodePath("../Cargapositivacentral")
+
+[node name="Controledacarga" type="Panel" parent="Areaexperimento" unique_id=621930221 node_paths=PackedStringArray("carga_geradora")]
+layout_mode = 0
+offset_left = 995.0
+offset_top = 545.0
+offset_right = 1257.0
+offset_bottom = 668.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_h1xow")
+script = ExtResource("5_h1xow")
+carga_geradora = NodePath("../Cargapositivacentral")
+
+[node name="Titulo" type="Label" parent="Areaexperimento/Controledacarga" unique_id=1848874374]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 5.0
+offset_right = 251.0
+offset_bottom = 28.0
+text = "ESCOLHA A CARGA GERADORA"
+
+[node name="Carganegativa" type="Button" parent="Areaexperimento/Controledacarga" unique_id=1798216146]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 54.0
+offset_right = 110.0
+offset_bottom = 88.0
+theme_override_colors/font_color = Color(0.12225201, 0.12225232, 0.122252114, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_g0u45")
+text = "Negativa"
+
+[node name="Cargapositiva" type="Button" parent="Areaexperimento/Controledacarga" unique_id=1686707099]
+layout_mode = 0
+offset_left = 137.0
+offset_top = 56.0
+offset_right = 239.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(0.0018410616, 0.0018410712, 0.0018410641, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_dts68")
+text = "Positiva"
+
+[connection signal="pressed" from="Areaexperimento/Controledacarga/Carganegativa" to="Areaexperimento/Controledacarga" method="_on_carganegativa_pressed"]
+[connection signal="pressed" from="Areaexperimento/Controledacarga/Cargapositiva" to="Areaexperimento/Controledacarga" method="_on_cargapositiva_pressed"]

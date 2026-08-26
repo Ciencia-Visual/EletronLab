@@ -1,0 +1,163 @@
+[gd_scene format=3 uid="uid://c2cowg7y607wm"]
+
+[ext_resource type="Texture2D" uid="uid://cyfbmtu65iaix" path="res://imagens/ChatGPT Image 19 de ago. de 2026, 11_33_32.png" id="1_0yewo"]
+[ext_resource type="Texture2D" uid="uid://cfkbnyftp77hn" path="res://imagens/ChatGPT Image 23 de ago. de 2026, 19_21_28.png" id="2_1phgh"]
+[ext_resource type="Texture2D" uid="uid://dmt7tya7km4ie" path="res://imagens/ChatGPT Image 23 de ago. de 2026, 19_31_00.png" id="3_mafo0"]
+[ext_resource type="Texture2D" uid="uid://dj5wq7nx48xrg" path="res://imagens/ChatGPT Image 23 de ago. de 2026, 19_37_20.png" id="4_o3a5d"]
+[ext_resource type="Texture2D" uid="uid://bqdaofmu2dwd" path="res://imagens/ChatGPT Image 23 de ago. de 2026, 19_40_59.png" id="5_mafo0"]
+[ext_resource type="Script" uid="uid://chf4eyx3anb5y" path="res://scrpts/cabelo_mechas.gd" id="6_o3a5d"]
+[ext_resource type="Script" uid="uid://h6cf6vf7htaf" path="res://scrpts/areabalao.gd" id="6_rsb7y"]
+[ext_resource type="Script" uid="uid://bvujyjbfl4xo6" path="res://scrpts/areacabelo.gd" id="8_rsb7y"]
+[ext_resource type="Texture2D" uid="uid://d2a2ihyqu8gtx" path="res://imagens/ChatGPT Image 24 de ago. de 2026, 09_16_52.png" id="9_q2qai"]
+[ext_resource type="Texture2D" uid="uid://bmiq1o35wm60f" path="res://imagens/ChatGPT Image 24 de ago. de 2026, 09_28_03.png" id="10_tcd1p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_01y1c"]
+size = Vector2(125, 153)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_spyda"]
+size = Vector2(188, 84)
+
+[node name="Laboratorioeletrizacao" type="Control" unique_id=1087483696]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fundolaboratorio" type="TextureRect" parent="." unique_id=1740735772]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -178.0
+offset_top = -152.0
+offset_right = 334.0
+offset_bottom = 319.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0yewo")
+
+[node name="Areaexperimentoatrito" type="Panel" parent="." unique_id=2041787424]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 139.0
+offset_right = 1096.0
+offset_bottom = 596.0
+mouse_filter = 2
+
+[node name="Pessoas" type="Sprite2D" parent="Areaexperimentoatrito" unique_id=1575669200]
+position = Vector2(474, 464)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_mafo0")
+
+[node name="Cabelomenina" type="Sprite2D" parent="Areaexperimentoatrito" unique_id=924943155]
+position = Vector2(360.5, 375.5)
+scale = Vector2(0.1673177, 0.20605464)
+texture = ExtResource("4_o3a5d")
+
+[node name="Fiomenina1" type="Sprite2D" parent="Areaexperimentoatrito" unique_id=1975013136]
+position = Vector2(445, 413.25)
+scale = Vector2(0.101887986, 0.13037111)
+texture = ExtResource("5_mafo0")
+script = ExtResource("6_o3a5d")
+
+[node name="Fiomenina5" type="Sprite2D" parent="Areaexperimentoatrito" unique_id=1035394582]
+position = Vector2(290.24997, 356.875)
+scale = Vector2(0.12597658, 0.08959961)
+texture = ExtResource("5_mafo0")
+flip_h = true
+script = ExtResource("6_o3a5d")
+
+[node name="Fiomenina4" type="Sprite2D" parent="Areaexperimentoatrito" unique_id=1533501254]
+position = Vector2(281.5, 383.5)
+scale = Vector2(0.10221357, 0.07910155)
+texture = ExtResource("5_mafo0")
+flip_h = true
+script = ExtResource("6_o3a5d")
+
+[node name="Fiomenina3" type="Sprite2D" parent="Areaexperimentoatrito" unique_id=347575310]
+position = Vector2(279, 433.49997)
+scale = Vector2(0.08593751, 0.10253904)
+texture = ExtResource("5_mafo0")
+flip_h = true
+script = ExtResource("6_o3a5d")
+
+[node name="Fiomenina2" type="Sprite2D" parent="Areaexperimentoatrito" unique_id=851968173]
+position = Vector2(428.24997, 354)
+scale = Vector2(0.08561196, 0.080078155)
+texture = ExtResource("5_mafo0")
+script = ExtResource("6_o3a5d")
+
+[node name="Areabalao" type="Area2D" parent="Areaexperimentoatrito" unique_id=282626144 node_paths=PackedStringArray("barra_atrito")]
+position = Vector2(351, 110)
+collision_mask = 2
+script = ExtResource("6_rsb7y")
+barra_atrito = NodePath("../Barraatrito")
+velocidade_retorno_cabelo = 0.4
+
+[node name="Balao" type="Sprite2D" parent="Areaexperimentoatrito/Areabalao" unique_id=279139809]
+position = Vector2(6, 19)
+scale = Vector2(0.25, 0.253)
+texture = ExtResource("2_1phgh")
+region_enabled = true
+region_rect = Rect2(0, 150, 600, 750)
+
+[node name="Collisionbalao" type="CollisionShape2D" parent="Areaexperimentoatrito/Areabalao" unique_id=158523887]
+position = Vector2(8, 15)
+shape = SubResource("RectangleShape2D_01y1c")
+
+[node name="Areacabelo" type="Area2D" parent="Areaexperimentoatrito" unique_id=177558245]
+position = Vector2(355, 314)
+collision_layer = 2
+script = ExtResource("8_rsb7y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areaexperimentoatrito/Areacabelo" unique_id=767686598]
+position = Vector2(7, 14)
+shape = SubResource("RectangleShape2D_spyda")
+
+[node name="Barraatrito" type="ProgressBar" parent="Areaexperimentoatrito" unique_id=1771125680]
+layout_mode = 0
+offset_right = 4.0
+offset_bottom = 27.0
+max_value = 1.0
+
+[node name="Cabelomenino" type="Sprite2D" parent="Areaexperimentoatrito" unique_id=1654748092]
+position = Vector2(593, 384)
+scale = Vector2(0.15420203, 0.16336633)
+texture = ExtResource("9_q2qai")
+
+[node name="Fiomenino1" type="Sprite2D" parent="Areaexperimentoatrito" unique_id=1794351876]
+position = Vector2(599, 368.00003)
+rotation = 1.9512781
+scale = Vector2(0.08629384, 0.09508849)
+texture = ExtResource("10_tcd1p")
+flip_h = true
+
+[node name="Fiomenino2" type="Sprite2D" parent="Areaexperimentoatrito" unique_id=2128852217]
+position = Vector2(605.04865, 363.77368)
+rotation = 1.9512781
+scale = Vector2(0.088052824, 0.10851152)
+texture = ExtResource("10_tcd1p")
+flip_h = true
+
+[node name="Fiomenino3" type="Sprite2D" parent="Areaexperimentoatrito" unique_id=339455816]
+position = Vector2(606.4283, 359.4671)
+rotation = 1.6982054
+scale = Vector2(0.0789502, 0.10176432)
+texture = ExtResource("10_tcd1p")
+flip_h = true
+
+[node name="Fiomenino4" type="Sprite2D" parent="Areaexperimentoatrito" unique_id=1490471412]
+position = Vector2(617.927, 339.1849)
+rotation = 1.6982054
+scale = Vector2(0.060725324, 0.10735043)
+texture = ExtResource("10_tcd1p")
+flip_h = true
+
+[node name="Fiomenino5" type="Sprite2D" parent="Areaexperimentoatrito" unique_id=1420235100]
+position = Vector2(602.4929, 348.70856)
+rotation = 1.6982054
+scale = Vector2(0.06879038, 0.09104507)
+texture = ExtResource("10_tcd1p")
+flip_h = true

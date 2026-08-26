@@ -54,19 +54,19 @@ func verificar_resposta(resposta: String):
 		return
 
 
-	# Volta os botões ao estado normal
+	
 	botao_atracao.modulate = Color.WHITE
 	botao_repulsao.modulate = Color.WHITE
 
 
-	# Produto das cargas
+	
 	var produto = (
 		carga_positiva.valor_carga
 		* carga_negativa.valor_carga
 	)
 
 
-	# Determina a resposta correta
+
 	var resposta_correta: String
 
 	if produto < 0:
@@ -75,15 +75,10 @@ func verificar_resposta(resposta: String):
 		resposta_correta = "repulsao"
 
 
-	# ==========================================
-	# RESPOSTA CORRETA
-	# ==========================================
-
 	if resposta == resposta_correta:
 
 		resultado.text = "✓ CORRETO!"
 
-		# Adiciona os pontos somente uma vez
 	if not desafio_concluido:
 		pontos += 10
 		acertos += 1
@@ -98,7 +93,6 @@ func verificar_resposta(resposta: String):
 			hide()
 			desafio2.show()
 
-		# Deixa o botão correto verde
 
 		if resposta == "atracao":
 
@@ -117,15 +111,12 @@ func verificar_resposta(resposta: String):
 			)
 
 
-	# ==========================================
-	# RESPOSTA ERRADA
-	# ==========================================
 
 	else:
 
 		resultado.text = "✗ TENTE NOVAMENTE"
 
-		# Deixa o botão errado vermelho
+
 
 		if resposta == "atracao":
 
@@ -156,7 +147,6 @@ func _on_botaoatracao_pressed():
 
 func reiniciar_desafio():
 	desafio_concluido = false
-	# Volta os botões para a aparência normal
 	botao_atracao.modulate = Color.WHITE
 	botao_repulsao.modulate = Color.WHITE
 
