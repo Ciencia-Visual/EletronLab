@@ -15,3 +15,4 @@ func _mouse_saiu():
 
 func _on_pressed():
 	get_tree().change_scene_to_file("res://cenas/laboratorio.tscn")
+#teste
