@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://pmu08udyhb5c"]
+
+[ext_resource type="Texture2D" uid="uid://cyfbmtu65iaix" path="res://imagens/ChatGPT Image 19 de ago. de 2026, 11_33_32.png" id="1_6w1yu"]
+[ext_resource type="Texture2D" uid="uid://debghsvqta7hr" path="res://imagens/ChatGPT Image 30 de ago. de 2026, 11_01_21.png" id="2_2rtqg"]
+
+[node name="Microscopio" type="Control" unique_id=1549768757]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fundo" type="TextureRect" parent="." unique_id=892102180]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -342.0
+offset_top = -773.0
+offset_right = 664.0
+offset_bottom = 218.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_6w1yu")
+
+[node name="Titulo" type="Label" parent="." unique_id=2069654943]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 12.0
+offset_right = 1136.0
+offset_bottom = 108.0
+theme_override_colors/font_color = Color(0.59714544, 0.96754485, 0.9999998, 1)
+theme_override_font_sizes/font_size = 70
+text = "VISÃO MICROSCÓPICA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Descricao" type="Label" parent="." unique_id=1586360949]
+layout_mode = 0
+offset_left = 218.0
+offset_top = 73.0
+offset_right = 1091.0
+offset_bottom = 147.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "Agora vamos observar o que não conseguimos ver a olho nu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ZOOM" type="Label" parent="." unique_id=286550404]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 536.0
+offset_right = 237.0
+offset_bottom = 575.0
+text = "Escolha a lente de aumento:"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=515331292]
+position = Vector2(641, 408)
+scale = Vector2(0.45499608, 0.45769855)
+texture = ExtResource("2_2rtqg")

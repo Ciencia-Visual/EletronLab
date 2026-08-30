@@ -11,12 +11,143 @@
 [ext_resource type="Texture2D" uid="uid://d2a2ihyqu8gtx" path="res://imagens/ChatGPT Image 24 de ago. de 2026, 09_16_52.png" id="9_q2qai"]
 [ext_resource type="Texture2D" uid="uid://bmiq1o35wm60f" path="res://imagens/ChatGPT Image 24 de ago. de 2026, 09_28_03.png" id="10_tcd1p"]
 [ext_resource type="Script" uid="uid://cd7se4ma85mep" path="res://scrpts/fiosmenino.gd" id="11_tcd1p"]
+[ext_resource type="AudioStream" uid="uid://51eyimiefj81" path="res://sons/One_More_Credit.mp3" id="12_kc11t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_01y1c"]
 size = Vector2(125, 153)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_spyda"]
 size = Vector2(188, 84)
+
+[sub_resource type="FontVariation" id="FontVariation_rkk07"]
+variation_embolden = 1.16
+spacing_glyph = 5
+spacing_space = 5
+spacing_top = 7
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_01y1c"]
+color = Color(0.4898336, 0.65402555, 1, 1)
+grow_begin = 109.0
+grow_end = 109.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_01y1c"]
+bg_color = Color(0.33036384, 0.6790353, 0.53796315, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.10558533, 0.2236369, 0.15478495, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+shadow_color = Color(0.0253638, 0.0253638, 0.025363795, 0.6)
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jyvnd"]
+bg_color = Color(0.89411765, 0.40784314, 0.627451, 0.73333335)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="Animation" id="Animation_tcd1p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 0.023529412, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:theme_override_colors/font_shadow_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [null]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:theme_override_colors/font_outline_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [null]
+}
+
+[sub_resource type="Animation" id="Animation_kc11t"]
+resource_name = "labelprincipal"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.11, 0.18, 0.24, 0.28, 0.31, 0.35, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 0.023529412, 1), Color(0.97395474, 0.9548711, 0.93581057, 1), Color(0.972549, 0.9529412, 0.14117648, 1), Color(0.9643658, 0.90310544, 0.8996271, 1), Color(0.9647059, 0.9019608, 0, 1), Color(0.92924815, 0.8629899, 0.870899, 1), Color(0.9254902, 0.9098039, 0, 1), Color(0.9271518, 0.860765, 0.83075637, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:theme_override_colors/font_shadow_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.11, 0.18),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [null, Color(0.91764706, 0.7882353, 0.3529412, 0.7921569), Color(0.99391013, 0.97418815, 0.9100393, 0.7921569)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:theme_override_colors/font_outline_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [null]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ehtq3"]
+_data = {
+&"RESET": SubResource("Animation_tcd1p"),
+&"labelprincipal": SubResource("Animation_kc11t")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyda"]
+bg_color = Color(0.972549, 0.6, 0.6, 0.6431373)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.99215686, 0.5294118, 0.6509804, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
 
 [node name="Laboratorioeletrizacao" type="Control" unique_id=1087483696]
 layout_mode = 3
@@ -90,13 +221,15 @@ scale = Vector2(0.08561196, 0.080078155)
 texture = ExtResource("5_mafo0")
 script = ExtResource("6_o3a5d")
 
-[node name="Areabalao" type="Area2D" parent="Areaexperimentoatrito" unique_id=282626144 node_paths=PackedStringArray("barra_atrito")]
+[node name="Areabalao" type="Area2D" parent="Areaexperimentoatrito" unique_id=282626144 node_paths=PackedStringArray("barra_atrito", "painel_instrucao", "dialogo")]
 z_index = 10
 position = Vector2(351, 110)
 collision_mask = 2
 script = ExtResource("6_rsb7y")
 barra_atrito = NodePath("../Barraatrito")
 velocidade_retorno_cabelo = 0.4
+painel_instrucao = NodePath("../Descricaodaatividade")
+dialogo = NodePath("../Dialogo")
 
 [node name="Balao" type="Sprite2D" parent="Areaexperimentoatrito/Areabalao" unique_id=279139809]
 position = Vector2(6, 19)
@@ -178,3 +311,84 @@ scale = Vector2(0.06879038, 0.09104507)
 texture = ExtResource("10_tcd1p")
 flip_h = true
 script = ExtResource("11_tcd1p")
+
+[node name="Label" type="Label" parent="Areaexperimentoatrito" unique_id=1620639253]
+layout_mode = 0
+offset_left = 202.0
+offset_top = -87.0
+offset_right = 757.0
+offset_bottom = 2.0
+theme_override_colors/font_color = Color(1, 1, 0.023529412, 1)
+theme_override_fonts/font = SubResource("FontVariation_rkk07")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxLine_01y1c")
+text = "VAMOS ELETRIZAR?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dialogo" type="Panel" parent="Areaexperimentoatrito" unique_id=1481158392]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.022000002
+anchor_bottom = 0.08800001
+offset_left = 695.0
+offset_top = 223.0
+offset_right = 876.562
+offset_bottom = 316.784
+theme_override_styles/panel = SubResource("StyleBoxFlat_01y1c")
+
+[node name="Texto" type="Label" parent="Areaexperimentoatrito/Dialogo" unique_id=203736091]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 10.0
+offset_right = 177.0
+offset_bottom = 85.0
+text = "Por que o meu 
+cabelo
+está subindo?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Botaoavancar" type="Button" parent="Areaexperimentoatrito/Dialogo" unique_id=74167544]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 89.0
+offset_right = 189.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_jyvnd")
+text = "Me ajude a investigar!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Areaexperimentoatrito" unique_id=999407268]
+libraries/ = SubResource("AnimationLibrary_ehtq3")
+autoplay = &"labelprincipal"
+
+[node name="Descricaodaatividade" type="Panel" parent="Areaexperimentoatrito" unique_id=197836843]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 44.0
+offset_right = 282.0
+offset_bottom = 235.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_spyda")
+
+[node name="Label" type="Label" parent="Areaexperimentoatrito/Descricaodaatividade" unique_id=1720288448]
+layout_mode = 0
+offset_right = 220.0
+offset_bottom = 188.0
+theme_override_font_sizes/font_size = 20
+text = "Bem- vindo (a) ao
+Lab de Eletrização!
+Esfregue a bexiga no
+cabelo dos nossos dois
+amigos e veja o que 
+acontece..."
+
+[node name="Fundomusical" type="AudioStreamPlayer" parent="." unique_id=1712678083]
+stream = ExtResource("12_kc11t")
+volume_db = -43.581
+autoplay = true
+parameters/looping = true
+
+[connection signal="pressed" from="Areaexperimentoatrito/Dialogo/Botaoavancar" to="Areaexperimentoatrito/Areabalao" method="_on_botaoavancar_pressed"]

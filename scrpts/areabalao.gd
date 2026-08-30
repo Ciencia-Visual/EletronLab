@@ -10,11 +10,13 @@ var intensidade_cabelo_menina: float = 0.0
 var intensidade_cabelo_menino: float = 0.0
 
 var posicao_anterior := Vector2.ZERO
+var etapa_concluida: bool = false
 
 @export var barra_atrito: ProgressBar
 
 @export var velocidade_retorno_cabelo: float = 0.8
-
+@export var painel_instrucao: Panel
+@export var dialogo: Panel
 
 func _ready():
 
@@ -90,7 +92,7 @@ func _process(delta):
 	if (menina_em_contato or menino_em_contato) and arrastando:
 
 		nivel_atrito += (
-			distancia_movida * 0.001
+			distancia_movida * 0.0001
 		)
 
 		nivel_atrito = clamp(
@@ -98,7 +100,13 @@ func _process(delta):
 			0.0,
 			1.0
 		)
-
+		
+	if nivel_atrito >= 0.90 and not etapa_concluida:
+		etapa_concluida = true
+		if painel_instrucao != null:
+			painel_instrucao.visible = false
+		if dialogo != null:
+			dialogo.visible = true
 
 	if barra_atrito != null:
 
@@ -110,7 +118,7 @@ func _process(delta):
 		intensidade_cabelo_menina = move_toward(
 			intensidade_cabelo_menina,
 			nivel_atrito,
-			0.4 * delta
+			0.2 * delta
 		)
 
 	else:
@@ -127,7 +135,7 @@ func _process(delta):
 		intensidade_cabelo_menino = move_toward(
 			intensidade_cabelo_menino,
 			nivel_atrito,
-			0.4 * delta
+			0.2 * delta
 		)
 
 	else:
@@ -179,3 +187,7 @@ func _process(delta):
 	$"../Fiomenino5".definir_intensidade(
 		intensidade_cabelo_menino * 0.85
 	)
+
+
+func _on_botaoavancar_pressed():
+	dialogo.visible = false
