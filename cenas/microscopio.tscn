@@ -56,7 +56,9 @@ offset_right = 237.0
 offset_bottom = 575.0
 text = "Escolha a lente de aumento:"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=515331292]
+[node name="Visor" type="Sprite2D" parent="." unique_id=515331292]
 position = Vector2(641, 408)
 scale = Vector2(0.45499608, 0.45769855)
 texture = ExtResource("2_2rtqg")
+
+[node name="Particulas" type="Node2D" parent="Visor" unique_id=1537213429]
