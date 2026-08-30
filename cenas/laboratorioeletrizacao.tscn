@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://bvujyjbfl4xo6" path="res://scrpts/areacabelo.gd" id="8_rsb7y"]
 [ext_resource type="Texture2D" uid="uid://d2a2ihyqu8gtx" path="res://imagens/ChatGPT Image 24 de ago. de 2026, 09_16_52.png" id="9_q2qai"]
 [ext_resource type="Texture2D" uid="uid://bmiq1o35wm60f" path="res://imagens/ChatGPT Image 24 de ago. de 2026, 09_28_03.png" id="10_tcd1p"]
+[ext_resource type="Script" uid="uid://cd7se4ma85mep" path="res://scrpts/fiosmenino.gd" id="11_tcd1p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_01y1c"]
 size = Vector2(125, 153)
@@ -90,6 +91,7 @@ texture = ExtResource("5_mafo0")
 script = ExtResource("6_o3a5d")
 
 [node name="Areabalao" type="Area2D" parent="Areaexperimentoatrito" unique_id=282626144 node_paths=PackedStringArray("barra_atrito")]
+z_index = 10
 position = Vector2(351, 110)
 collision_mask = 2
 script = ExtResource("6_rsb7y")
@@ -116,6 +118,16 @@ script = ExtResource("8_rsb7y")
 position = Vector2(7, 14)
 shape = SubResource("RectangleShape2D_spyda")
 
+[node name="Areacabelomenino" type="Area2D" parent="Areaexperimentoatrito" unique_id=1819657812]
+z_index = 5
+position = Vector2(355, 314)
+collision_layer = 2
+script = ExtResource("8_rsb7y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areaexperimentoatrito/Areacabelomenino" unique_id=509825284]
+position = Vector2(232, 52)
+shape = SubResource("RectangleShape2D_spyda")
+
 [node name="Barraatrito" type="ProgressBar" parent="Areaexperimentoatrito" unique_id=1771125680]
 layout_mode = 0
 offset_right = 4.0
@@ -133,6 +145,7 @@ rotation = 1.9512781
 scale = Vector2(0.08629384, 0.09508849)
 texture = ExtResource("10_tcd1p")
 flip_h = true
+script = ExtResource("11_tcd1p")
 
 [node name="Fiomenino2" type="Sprite2D" parent="Areaexperimentoatrito" unique_id=2128852217]
 position = Vector2(605.04865, 363.77368)
@@ -140,13 +153,15 @@ rotation = 1.9512781
 scale = Vector2(0.088052824, 0.10851152)
 texture = ExtResource("10_tcd1p")
 flip_h = true
+script = ExtResource("11_tcd1p")
 
 [node name="Fiomenino3" type="Sprite2D" parent="Areaexperimentoatrito" unique_id=339455816]
 position = Vector2(606.4283, 359.4671)
-rotation = 1.6982054
+rotation = 1.5707964
 scale = Vector2(0.0789502, 0.10176432)
 texture = ExtResource("10_tcd1p")
 flip_h = true
+script = ExtResource("11_tcd1p")
 
 [node name="Fiomenino4" type="Sprite2D" parent="Areaexperimentoatrito" unique_id=1490471412]
 position = Vector2(617.927, 339.1849)
@@ -154,6 +169,7 @@ rotation = 1.6982054
 scale = Vector2(0.060725324, 0.10735043)
 texture = ExtResource("10_tcd1p")
 flip_h = true
+script = ExtResource("11_tcd1p")
 
 [node name="Fiomenino5" type="Sprite2D" parent="Areaexperimentoatrito" unique_id=1420235100]
 position = Vector2(602.4929, 348.70856)
@@ -161,3 +177,4 @@ rotation = 1.6982054
 scale = Vector2(0.06879038, 0.09104507)
 texture = ExtResource("10_tcd1p")
 flip_h = true
+script = ExtResource("11_tcd1p")
