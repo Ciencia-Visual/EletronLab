@@ -1,7 +1,56 @@
 [gd_scene format=3 uid="uid://pmu08udyhb5c"]
 
 [ext_resource type="Texture2D" uid="uid://cyfbmtu65iaix" path="res://imagens/ChatGPT Image 19 de ago. de 2026, 11_33_32.png" id="1_6w1yu"]
+[ext_resource type="Script" uid="uid://cqsi4ohyobxje" path="res://scrpts/microscopio.gd" id="1_v2e2k"]
 [ext_resource type="Texture2D" uid="uid://debghsvqta7hr" path="res://imagens/ChatGPT Image 30 de ago. de 2026, 11_01_21.png" id="2_2rtqg"]
+[ext_resource type="Script" uid="uid://dpnptuaweclm5" path="res://scrpts/particulas.gd" id="3_2rtqg"]
+[ext_resource type="Script" uid="uid://bh3y3b6xdkvsx" path="res://scrpts/particulasbalao.gd" id="5_c0gnt"]
+[ext_resource type="Texture2D" uid="uid://cfkbnyftp77hn" path="res://imagens/ChatGPT Image 23 de ago. de 2026, 19_21_28.png" id="5_ejdw2"]
+[ext_resource type="Texture2D" uid="uid://d2a2ihyqu8gtx" path="res://imagens/ChatGPT Image 24 de ago. de 2026, 09_16_52.png" id="6_6w6d4"]
+[ext_resource type="Script" uid="uid://c4k3fn6tq60mq" path="res://scrpts/particulascabelo.gd" id="6_ig3o3"]
+[ext_resource type="Script" uid="uid://byo1eba7pesob" path="res://scrpts/eletronsanimados.gd" id="7_ig3o3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyda"]
+bg_color = Color(0.4817894, 0.48178953, 0.4817894, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.32172796, 0.321728, 0.32172775, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jyvnd"]
+bg_color = Color(0.48235294, 0.48235294, 0.48235294, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.23392555, 0.23392546, 0.23392531, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_abjja"]
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.2051174, 0.20511746, 0.20511726, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_c0gnt"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_ejdw2"]
 
 [node name="Microscopio" type="Control" unique_id=1549768757]
 layout_mode = 3
@@ -10,6 +59,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_v2e2k")
 
 [node name="Fundo" type="TextureRect" parent="." unique_id=892102180]
 layout_mode = 1
@@ -48,13 +98,13 @@ text = "Agora vamos observar o que não conseguimos ver a olho nu"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ZOOM" type="Label" parent="." unique_id=286550404]
+[node name="IndicadorAumento" type="Label" parent="." unique_id=286550404]
 layout_mode = 0
 offset_left = 19.0
 offset_top = 536.0
 offset_right = 237.0
 offset_bottom = 575.0
-text = "Escolha a lente de aumento:"
+text = "ESCOLHA O NÍVEL DE AMPLIAÇÃO:"
 
 [node name="Visor" type="Sprite2D" parent="." unique_id=515331292]
 position = Vector2(641, 408)
@@ -62,3 +112,86 @@ scale = Vector2(0.45499608, 0.45769855)
 texture = ExtResource("2_2rtqg")
 
 [node name="Particulas" type="Node2D" parent="Visor" unique_id=1537213429]
+script = ExtResource("3_2rtqg")
+
+[node name="Particulasbalao" type="Node2D" parent="Visor" unique_id=1722660304]
+visible = false
+script = ExtResource("5_c0gnt")
+
+[node name="Particulascabelo" type="Node2D" parent="Visor" unique_id=21294232]
+visible = false
+script = ExtResource("6_ig3o3")
+
+[node name="Eletronsanimados" type="Node2D" parent="Visor" unique_id=1773861795]
+script = ExtResource("7_ig3o3")
+
+[node name="Botao100" type="Button" parent="." unique_id=129129676]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 567.0
+offset_right = 169.0
+offset_bottom = 600.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_spyda")
+text = "100x"
+
+[node name="Botao1000" type="Button" parent="." unique_id=1262182539]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 604.0
+offset_right = 169.0
+offset_bottom = 639.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_jyvnd")
+text = "1000x"
+
+[node name="Button10000" type="Button" parent="." unique_id=1237257076]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 646.0
+offset_right = 170.0
+offset_bottom = 679.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_abjja")
+text = "10000x"
+
+[node name="Materiaisanalise" type="Label" parent="." unique_id=1761402942]
+layout_mode = 0
+offset_left = 944.0
+offset_top = 530.0
+offset_right = 1261.0
+offset_bottom = 578.0
+text = "ESCOLHA O MATERIAL A SER ANALISADO:"
+
+[node name="Balao" type="Button" parent="." unique_id=196346227]
+layout_mode = 1
+offset_left = 1140.0
+offset_top = 560.0
+offset_right = 1995.5557
+offset_bottom = 1615.5557
+scale = Vector2(0.09, 0.09)
+theme_override_styles/normal = SubResource("StyleBoxLine_c0gnt")
+icon = ExtResource("5_ejdw2")
+expand_icon = true
+
+[node name="Cabelo" type="Button" parent="." unique_id=1063003151]
+layout_mode = 0
+offset_left = 984.0
+offset_top = 550.0
+offset_right = 2281.0
+offset_bottom = 1948.0
+scale = Vector2(0.07, 0.07)
+theme_override_styles/normal = SubResource("StyleBoxLine_ejdw2")
+icon = ExtResource("6_6w6d4")
+
+[node name="Botaoatritar" type="Button" parent="." unique_id=1498969732]
+layout_mode = 0
+offset_left = 1030.0
+offset_top = 644.0
+offset_right = 1183.0
+offset_bottom = 688.0
+text = "ATRITAR"
+
+[connection signal="pressed" from="Botao100" to="." method="_on_botao_100_pressed"]
+[connection signal="pressed" from="Botao1000" to="." method="_on_botao_1000_pressed"]
+[connection signal="pressed" from="Button10000" to="." method="_on_button_10000_pressed"]
+[connection signal="pressed" from="Balao" to="." method="_on_balao_pressed"]
+[connection signal="pressed" from="Cabelo" to="." method="_on_cabelo_pressed"]
+[connection signal="pressed" from="Botaoatritar" to="." method="_on_botaoatritar_pressed"]
